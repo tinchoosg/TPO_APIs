@@ -15,9 +15,6 @@ function removeFromCart(productName) {
     updateCartCounter();
 }
 
-
-
-// Event listener para agregar productos al carrito
 document.querySelectorAll('.add-to-cart-btn').forEach(item => {
     item.addEventListener('click', event => {
         event.preventDefault();
@@ -25,11 +22,10 @@ document.querySelectorAll('.add-to-cart-btn').forEach(item => {
     });
 });
 
-
-
 var cartList = document.getElementById('cart-list');
+var cartIcon = document.getElementById('cart-icon');
 
-document.getElementById('cart-button').addEventListener('click', () => {
+cartIcon.addEventListener('click', function() {
     if (cartList.style.display === 'none' || cartList.style.display === '') {
         showCart();
     } else {
@@ -41,7 +37,6 @@ function hideCart() {
     cartList.style.display = 'none';
 }
 
-// Luego, dentro de la función showCart, elimina el if/else y simplemente muestra la lista:
 function showCart() {
     cartList.innerHTML = '';
 
