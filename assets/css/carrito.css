@@ -1,0 +1,56 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+.productos {
+    flex: 1;
+}
+.total {
+    width: 300px;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 5px;
+}
+.total h2 {
+    margin-top: 0;
+}
+.total ul {
+    list-style-type: none;
+    padding: 0;
+}
+.total li {
+    margin-bottom: 10px;
+}
+.btn-finalizar {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+/* Estilos para el método de pago */
+.metodo-pago {
+    margin-top: 20px;
+}
+.metodo-pago h3 {
+    margin-bottom: 10px;
+}
+.metodo-pago ul {
+    list-style-type: none;
+    padding: 0;
+}
+.metodo-pago li {
+    margin-bottom: 5px;
+}
+/* Contenedor común para alinear método de pago y carrito de compras */
+.contenedor {
+    display: flex;
+    align-items: flex-start; /* Alinear los elementos al inicio del contenedor */
+}
