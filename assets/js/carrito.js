@@ -56,6 +56,7 @@ function removeFromCart(index) {
 function saveCartItemsToLocalStorage() {
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
 }
+
 function showCart() {
     var listaProductos = document.getElementById('lista-productos');
     listaProductos.innerHTML = '';
@@ -75,9 +76,7 @@ function showCart() {
         decreaseButton.addEventListener('click', function() {
             if (item.quantity > 1) {
                 item.quantity--;
-                updateCartCounter();
-                saveCartItemsToLocalStorage();
-                showCart();
+                showCart(); 
             }
         });
         quantity.appendChild(decreaseButton);
@@ -88,9 +87,7 @@ function showCart() {
         increaseButton.textContent = '+';
         increaseButton.addEventListener('click', function() {
             item.quantity++;
-            updateCartCounter();
-            saveCartItemsToLocalStorage();
-            showCart();
+            showCart(); 
         });
         quantity.appendChild(increaseButton);
         li.appendChild(quantity);
@@ -110,6 +107,7 @@ function showCart() {
     document.getElementById('impuestos').textContent = '$' + total.impuestos.toFixed(2);
     document.getElementById('total').textContent = '$' + total.total.toFixed(2);
 }
+
 
 function calcularTotal() {
     var subtotal = 0;
@@ -172,16 +170,41 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-// Funcoines para finalizar compra
+// Funciones para finalizar compra
 document.addEventListener("DOMContentLoaded", function() {
     var btnFinalizarCompra = document.querySelector(".btn-finalizar");
     btnFinalizarCompra.addEventListener("click", finalizarCompra);
+
+    showCart();
 });
 
 function finalizarCompra() {
-    cartItems = [];
-    updateCartCounter(); 
-    showCart(); 
-    alert("¡Su compra ha sido realizada con éxito!");
+    vaciarCarrito(); 
+    showExitoCartel(); 
 }
 
+function showExitoCartel() {
+    // Crear el elemento del cartel de éxito
+    var cartelExito = document.createElement("div");
+    cartelExito.className = "cartel-exito";
+    cartelExito.textContent = "¡Su compra ha sido realizada con éxito!";
+
+    // Crear el botón de cerrar
+    var btnCerrar = document.createElement("button");
+    btnCerrar.className = "btn-cerrar";
+    btnCerrar.textContent = "Cerrar";
+    btnCerrar.onclick = function() {
+        document.body.removeChild(cartelExito);
+        vaciarCarrito(); 
+    };
+
+    cartelExito.appendChild(btnCerrar);
+    document.body.appendChild(cartelExito);
+}
+
+function vaciarCarrito() {
+    cartItems = [];
+    updateCartCounter();
+    saveCartItemsToLocalStorage();
+    showCart(); 
+}
