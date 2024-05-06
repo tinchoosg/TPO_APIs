@@ -17,12 +17,15 @@ productCards.forEach(function(productCard) {
     });
 });
 
+// Corrección de la función addToCart
 function addToCart(productName, price, image) {
-    var existingItem = cartItems.find(item => item.name === productName);
+    // Buscar el producto en el carrito por nombre e imagen
+    var existingItem = cartItems.find(item => item.name === productName && item.image === image);
 
     if (existingItem) {
-        existingItem.quantity++;
+        existingItem.quantity++; // Si ya existe, aumentar la cantidad
     } else {
+        // Si no existe, agregar un nuevo elemento al carrito
         cartItems.push({
             name: productName,
             price: price,
@@ -37,27 +40,34 @@ function addToCart(productName, price, image) {
 }
 
 
+
 function updateCartCounter() {
     var totalItems = cartItems.reduce((total, item) => total + item.quantity, 0);
     document.getElementById("cart-count").innerText = totalItems;
 }
 
-function removeFromCart(productName) {
-    cartItems = cartItems.filter(item => item.name !== productName);
-    showCart();
+function removeFromCart(index) {
+    // Eliminar el producto del carrito utilizando el índice proporcionado
+    cartItems.splice(index, 1);
+
+    // Actualizar el contador del carrito y mostrar el carrito actualizado
     updateCartCounter();
+    showCart();
+
+    // Guardar los cambios en el almacenamiento local
     saveCartItemsToLocalStorage();
 }
 
 function saveCartItemsToLocalStorage() {
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
 }
-
 function showCart() {
     var listaProductos = document.getElementById('lista-productos');
+
+    // Limpiar la lista de productos antes de agregar nuevos elementos
     listaProductos.innerHTML = '';
 
-    cartItems.forEach(function(item) {
+    cartItems.forEach(function(item, index) { // Pasar también el índice del producto
         var li = document.createElement('li');
         var img = document.createElement('img');
         img.src = item.image;
@@ -94,9 +104,12 @@ function showCart() {
         var removeButton = document.createElement('button');
         removeButton.textContent = 'Eliminar';
         removeButton.addEventListener('click', function() {
-            removeFromCart(item.name);
+            // Pasar el índice del producto al hacer clic en el botón "Eliminar"
+            removeFromCart(index);
         });
         li.appendChild(removeButton);
+        
+        // Agregar el nuevo elemento a la lista de productos
         listaProductos.appendChild(li);
     });
 
