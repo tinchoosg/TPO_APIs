@@ -20,3 +20,5 @@ verMasBotones.forEach(function(boton) {
         verProducto(productName);
     });
 });
+
+

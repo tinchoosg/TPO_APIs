@@ -6,7 +6,7 @@ function mostrarDetalle(productoID) {
     });
 
     var detalleProducto = document.getElementById(productoID);
-    detalleProducto.style.display = 'block';
+    detalleProducto.display = 'block';
 }
 
 var verMasBotones = document.querySelectorAll('.btn-ver-mas');
