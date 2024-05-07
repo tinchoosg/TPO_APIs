@@ -1,0 +1,83 @@
+const productos = [
+    {
+        id: 1,
+        nombre: "Lentes de sol RayBan",
+        imagen: "assets/img/rayban.webp",
+        precio: 50.00,
+        genero: "Unisex",
+        categoria: "Accesorio"
+    },
+    {
+        id: 2,
+        nombre: "Remera Originals Negra",
+        imagen: "assets/img/Adidas_Originals_Negro.avif",
+        precio: 25.00,
+        genero: "Mujer",
+        categoria: "Remera"
+    },
+    {
+        id: 3,
+        nombre: "Remera Levis Roja",
+        imagen: "assets/img/Levis-Roja.webp",
+        precio: 20.00,
+        genero: "Hombre",
+        categoria: "Remera"
+    },
+    {
+        id: 4,
+        nombre: "Remeron Motomami Tour",
+        imagen: "assets/img/motomami.webp",
+        precio: 15.00,
+        genero: "Mujer",
+        categoria: "Remera"
+    },
+    {
+        id: 5,
+        nombre: "Camisa Lino",
+        imagen: "assets/img/camisahym.avif",
+        precio: 57.00,
+        genero: "Mujer",
+        categoria: "Remera"
+    },
+    {
+        id: 6,
+        nombre: "Nike Life Therma-FIT",
+        imagen: "assets/img/puffernike.jpg",
+        precio: 80.00,
+        genero: "Mujer",
+        categoria: "Abrigo"
+    },
+    {
+        id: 7,
+        nombre: "Adidas select hoodie",
+        imagen: "assets/img/hoodieadidas.avif",
+        precio: 55.00,
+        genero: "Hombre",
+        categoria: "Abrigo"
+    },
+    {
+        id: 8,
+        nombre: "Adidas Forum Bold",
+        imagen: "assets/img/summer adidas.jpg",
+        precio: 230.00,
+        genero: "Unisex",
+        categoria: "Zapatos"
+    },
+    {
+        id: 9,
+        nombre: "Nike Dunk High Clouds",
+        imagen: "assets/img/Nike-Dunk-High-Clouds-FD0882-400-Release-Date-4-1068x762.jpg",
+        precio: 400.00,
+        genero: "Unisex",
+        categoria: "Zapatos"
+    },
+    {
+        id: 10,
+        nombre: "Jordan Flight MVP85",
+        imagen: "assets/img/JordanfligthMVP85.jpeg",
+        precio: 50.00,
+        genero: "Unisex",
+        categoria: "Zapatos"
+    }
+];
+
