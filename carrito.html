@@ -117,21 +117,18 @@
         </div>
     </div>
 
-    <!-- Contenido del carrito -->
     <div class="contenedor">
-        <div class="container">
+        <div class="container" id="contenedor-principal">
             <div class="carrito-contenedor">
                 <!-- Lado izquierdo: Lista de productos -->
                 <div class="productos">
-                    <h2>Carrito de Compras</h2>
-                    <ul id="lista-productos" class="productos">
-                        <!-- Los productos se agregarán dinámicamente aquí -->
-                    </ul>
+                    <h2 id="carrito-compras">Carrito de Compras</h2>
+                    <ul id="lista-productos" class="productos"></ul>
                 </div>
                 <!-- Lado derecho: Resumen de la compra -->
                 <div class="compra">
                     <div id="compra-resumen">
-                        <h2>Total de la Compra</h2>
+                        <h2 id="total-compra">Total de la Compra</h2>
                         <ul>
                             <li>Subtotal: <span id="subtotal">$0.00</span></li>
                             <li>Impuestos: <span id="impuestos">$0.00</span></li>
