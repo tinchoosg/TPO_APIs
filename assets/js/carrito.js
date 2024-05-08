@@ -131,6 +131,7 @@ function showCart() {
 
     document.getElementById('subtotal').textContent = '$' + total.subtotal.toFixed(2);
     document.getElementById('impuestos').textContent = '$' + total.impuestos.toFixed(2);
+    document.getElementById('descuento').textContent = '$' + total.descuento.toFixed(2);
     document.getElementById('total').textContent = '$' + total.total.toFixed(2);
 }
 
@@ -143,11 +144,13 @@ function calcularTotal() {
     });
 
     var impuestos = subtotal * 0.10;
-    var total = subtotal + impuestos;
+    var descuento = subtotal * 0.15;
+    var total = subtotal + impuestos - descuento;
 
     return {
         subtotal: subtotal,
         impuestos: impuestos,
+        descuento: descuento,
         total: total
     };
 }
