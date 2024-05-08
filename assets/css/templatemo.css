@@ -82,7 +82,9 @@ body, ul, li, p, a, label, input, div {
 /* Shop */
 .shop-top-menu a:hover { color: #69bb7e !important;}
 /* Product */
-.product-wap { box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.10);}
+.product-wap { box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.10);
+  height: 400px; 
+}
 .product-wap .product-color-dot.color-dot-red { background:#f71515;}
 .product-wap .product-color-dot.color-dot-blue { background:#6db4fe;}
 .product-wap .product-color-dot.color-dot-black { background:#000000;}
@@ -99,12 +101,40 @@ body, ul, li, p, a, label, input, div {
   opacity: 1;
 }
 .card.product-wap a { color: #000;}
+
+.card-img {
+  width: 100%;
+  height: 250px; 
+  object-fit: fill; 
+}
+
+
+#product-detail {
+  width: 100%;
+  height: fit-content;
+}
+
+
+.row {
+  display: flex;
+  flex-wrap: wrap; 
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.col-md-4 {
+  flex: 0 0 33.333%; 
+  max-width: 33.333%; 
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
 #carousel-related-product .slick-slide:focus { outline: none !important;}
 #carousel-related-product .slick-dots li button:before {
   font-size: 15px;
   margin-top: 20px;
 }
-/* Brand */
+
 .brand-img {
   filter: grayscale(100%);
   opacity: 0.5;

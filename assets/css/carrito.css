@@ -1,6 +1,5 @@
 #contenedor-principal {
     background-color: #f0f0f0; 
-
 }
 
 ul {
@@ -23,7 +22,6 @@ ul {
     margin-bottom: 10px;
 }
 
-/* Estilos para el fondo borroso */
 .blurry-background {
     position: fixed;
     top: 0;
@@ -35,14 +33,13 @@ ul {
     z-index: 999; 
 }
 
-/* Estilos para el cartel de éxito */
 .cartel-exito {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #4CAF50;
-    padding: 40px;
+    background-color: white;
+    padding: 55px;
     border-radius: 10px;
     z-index: 1000; 
     text-align: center; 
@@ -50,7 +47,6 @@ ul {
     border-radius: 5px; 
 }
 
-/* Estilos para el botón de cerrar */
 .cartel-exito .btn-cerrar {
     background-color: #4CAF50; 
     color: black; 
@@ -66,13 +62,10 @@ ul {
     margin-right: 10px; 
 }
 
-
 .cartel-exito .btn-cerrar:hover {
     background-color: #3e8e41; 
 }
 
-
-/* Estilos para el botón de finalizar compra */
 .btn-finalizar {
     background-color: #4CAF50; 
     color: black; 
@@ -91,12 +84,10 @@ ul {
     background-color: #3e8e41; 
 }
 
-/* Estilos para el contenedor de los productos */
 .productos {
     margin-bottom: 70px; 
 }
 
-/* Estilos para el contenedor de la compra */
 .compra {
     position: fixed; 
     bottom: 0; 
@@ -109,27 +100,22 @@ ul {
     z-index: 999; 
 }
 
-/* Estilos para el contenedor de los elementos del carrito */
 .carrito-contenedor {
     display: flex; 
     justify-content: space-between; 
     margin-bottom: 50px; 
 }
 
-
-/* Estilos para el contenedor del carrito */
 .contenedor {
     display: flex;
     justify-content: space-between;
 }
 
-/* Estilos para el lado izquierdo */
 .productos {
     width: 50%;
     padding-right: 20px;
 }
 
-/* Estilos para el lado derecho */
 .compra {
     width: 40%;
     position: sticky;
@@ -137,17 +123,14 @@ ul {
     padding-left: 20px;
 }
 
-/* Estilos para el resumen de la compra */
 .compra #compra-resumen {
     position: relative;
 }
 
-/* Estilos para el total de la compra */
 .compra #compra-resumen ul {
     margin-bottom: 50px;
 }
 
-/* Estilos para el botón de finalizar compra */
 .compra .btn-finalizar {
     width: 80%;
     padding: 10px;
@@ -162,20 +145,17 @@ ul {
     transform: translateX(-50%);
 }
 
-/* Estilos para las miniaturas de las imágenes de los productos */
 .productos img {
     width: 100px; 
     height: auto; 
 }
 
-/* Estilos para el texto "Cantidad" */
 .cantidad-texto {
     font-size: 15px; 
     margin-top: 10px;
     margin-left: 30px;
 }
 
-/* Estilos para los elementos de la lista de productos */
 .productos li {
     display: flex; 
     align-items: center;
@@ -183,11 +163,11 @@ ul {
     margin-bottom: 30px; 
 }
 
-/* Estilos para los botones de suma, resta y eliminar */
 .productos button {
-    padding: 10px 10px; 
-    margin-left: 5px !important; 
-    background-color: whitesmoke;
+    padding: 5px 5px; 
+    margin-left: 10px !important; 
+    margin-right: 10px !important;
+    background-color: #4CAF50;
     color: black;
     border: none;
     border-radius: 10px; 
@@ -195,15 +175,41 @@ ul {
     font-size: 14px !important; 
 }
 
-/* Estilos para los botones de eliminar generados dinámicamente */
 .btn-eliminar-dinamico {
     padding: 5px 10px !important; 
-    margin-top: 30px !important; 
-    margin-left: 10px !important; 
+    margin-top: 10px !important; 
+    margin-left: 20px !important; 
     background-color: #4CAF50;
-    color: white;
+    color: #4CAF50;
     border: none;
     border-radius: 10px;
     cursor: pointer;
     font-size: 14px !important; 
+}
+
+
+.producto-en-carrito {
+    list-style: none;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    width: 250%; 
+}
+
+
+.producto-en-carrito img {
+    max-width: 120px;
+    margin-right: 40px;
+}
+
+.precio {
+    margin-right: 20px; 
+}
+
+.cantidad {
+    margin-left: 20px; 
 }
