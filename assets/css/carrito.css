@@ -1,127 +1,138 @@
-/* Estilos para el cartel de éxito */
-.cartel-exito {
-    background-color: #4CAF50; /* Color de fondo verde */
-    color: black; /* Texto negro */
-    padding: 20px; /* Espacio interno */
-    text-align: center; /* Alineación central del texto */
-    font-size: 20px; /* Tamaño de fuente */
-    border-radius: 5px; /* Bordes redondeados */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
-    position: fixed; /* Posición fija para que aparezca en la parte superior */
-    top: 50%; /* Centrado verticalmente */
-    left: 50%; /* Centrado horizontalmente */
-    transform: translate(-50%, -50%); /* Centrado exacto */
-    z-index: 999; /* Z-index para que aparezca sobre otros elementos */
-    width: 300px; /* Ancho */
+#contenedor-principal {
+    background-color: #f0f0f0; 
 }
 
-/* Estilos para el botón de cerrar */
+ul {
+    list-style: none;
+}
+
+#carrito-compras {
+    text-align: center;
+    font-size: 30px; 
+    color: black; 
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+#total-compra {
+    text-align: center;
+    font-size: 30px; 
+    color: black; 
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.blurry-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    backdrop-filter: blur(5px);
+    z-index: 999; 
+}
+
+.cartel-exito {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 55px;
+    border-radius: 10px;
+    z-index: 1000; 
+    text-align: center; 
+    font-size: 20px; 
+    border-radius: 5px; 
+}
+
 .cartel-exito .btn-cerrar {
-    background-color: #4CAF50; /* Color de fondo verde */
-    color: black; /* Texto negro */
-    border: none; /* Sin borde */
-    padding: 5px 10px; /* Espacio interno más pequeño */
-    font-size: 14px; /* Tamaño de fuente más pequeño */
-    cursor: pointer; /* Cambio de cursor al pasar el ratón */
-    border-radius: 3px; /* Bordes redondeados */
-    position: absolute; /* Posición absoluta para alinear con respecto al cartel */
-    bottom: 10px; /* Alinear en la parte inferior */
-    right: 10px; /* Alinear a la derecha */
+    background-color: #4CAF50; 
+    color: black; 
+    border: none; 
+    padding: 5px 10px; 
+    font-size: 14px; 
+    cursor: pointer; 
+    border-radius: 3px; 
+    position: absolute;
+    margin-top: 10px; 
+    bottom: 10px;
+    right: 10px; 
+    margin-right: 10px; 
 }
 
 .cartel-exito .btn-cerrar:hover {
-    background-color: #3e8e41; /* Color de fondo verde más oscuro al pasar el ratón */
+    background-color: #3e8e41; 
 }
 
-
-/* Estilos para el botón de finalizar compra */
 .btn-finalizar {
-    background-color: #4CAF50; /* Color de fondo verde */
-    color: black; /* Texto negro */
-    border: none; /* Sin borde */
-    padding: 10px 20px; /* Espacio interno */
-    font-size: 20px; /* Tamaño de fuente */
-    cursor: pointer; /* Cambio de cursor al pasar el ratón */
-    border-radius: 3px; /* Bordes redondeados */
-    position: absolute; /* Posición absoluta para alinear con respecto al cartel */
-    bottom: 10px; /* Alinear en la parte inferior */
-    left: 50%; /* Alinear al centro horizontal */
-    transform: translateX(-50%); /* Centrar horizontalmente */
+    background-color: #4CAF50; 
+    color: black; 
+    border: none; 
+    padding: 10px 10px; 
+    font-size: 18px; 
+    cursor: pointer; 
+    border-radius: 3px; 
+    position: absolute; 
+    bottom: 10px; 
+    left: 50%; 
+    transform: translateX(-50%); 
 }
 
 .btn-finalizar:hover {
-    background-color: #3e8e41; /* Color de fondo verde más oscuro al pasar el ratón */
+    background-color: #3e8e41; 
 }
 
-/* Estilos para el contenedor de los productos */
 .productos {
-    margin-bottom: 70px; /* Espacio debajo de los productos para el botón */
+    margin-bottom: 70px; 
 }
 
-/* Estilos para el contenedor de la compra */
 .compra {
-    position: fixed; /* Posición fija para que el contenedor esté siempre visible */
-    bottom: 0; /* Alinear en la parte inferior */
-    right: 0; /* Alinear a la derecha */
-    width: 30%; /* Ancho del 50% */
-    background-color: #fff; /* Fondo blanco */
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Sombra debajo del contenedor */
-    padding: 10px 0; /* Espacio interno */
-    text-align: center; /* Alineación del texto al centro */
-    z-index: 999; /* Z-index para que esté por encima de otros elementos */
+    position: fixed; 
+    bottom: 0; 
+    right: 0; 
+    width: 30%; 
+    background-color: #f0f0f0; 
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0); 
+    padding: 30px; 
+    text-align: center; 
+    z-index: 999; 
 }
 
-/* Estilos para el contenedor de los elementos del carrito */
 .carrito-contenedor {
-    display: flex; /* Utilizar flexbox */
-    justify-content: space-between; /* Espacio entre los contenedores */
-    margin-bottom: 50px; /* Espacio entre los contenedores */
+    display: flex; 
+    justify-content: space-between; 
+    margin-bottom: 50px; 
 }
 
-/* Estilos para el botón de finalizar compra */
-.finalizar-compra .btn-finalizar {
-    background-color: #4CAF50; /* Color de fondo verde */
-    color: white; /* Texto blanco */
-    border: none; /* Sin borde */
-    padding: 10px 20px; /* Espacio interno */
-    font-size: 14px; /* Tamaño de fuente */
-    cursor: pointer; /* Cambio de cursor al pasar el ratón */
-    border-radius: 3px; /* Bordes redondeados */
-}
-
-/* Estilos para el contenedor del carrito */
 .contenedor {
     display: flex;
     justify-content: space-between;
 }
 
-/* Estilos para el lado izquierdo */
 .productos {
     width: 50%;
     padding-right: 20px;
 }
 
-/* Estilos para el lado derecho */
 .compra {
     width: 40%;
     position: sticky;
-    top: 20px;
+    top: 10px;
     padding-left: 20px;
 }
 
-/* Estilos para el resumen de la compra */
 .compra #compra-resumen {
     position: relative;
 }
 
-/* Estilos para el total de la compra */
 .compra #compra-resumen ul {
     margin-bottom: 50px;
 }
 
-/* Estilos para el botón de finalizar compra */
 .compra .btn-finalizar {
-    width: 100%;
+    width: 80%;
     padding: 10px;
     background-color: #4CAF50;
     color: white;
@@ -134,35 +145,71 @@
     transform: translateX(-50%);
 }
 
-/* Estilos para las miniaturas de las imágenes de los productos */
 .productos img {
-    width: 100px; /* Reducir el tamaño de la imagen */
-    height: auto; /* Altura automática para mantener la proporción */
+    width: 100px; 
+    height: auto; 
 }
 
-/* Estilos para los elementos de la lista de productos */
+.cantidad-texto {
+    font-size: 15px; 
+    margin-top: 10px;
+    margin-left: 30px;
+}
+
 .productos li {
-    display: flex; /* Utilizar flexbox para alinear los elementos */
-    align-items: center; /* Alinear verticalmente los elementos */
-    margin-bottom: 20px; /* Espacio entre los elementos */
+    display: flex; 
+    align-items: center;
+    justify-content: space-between; 
+    margin-bottom: 30px; 
 }
 
-/* Estilos para los botones de suma, resta y eliminar */
 .productos button {
-    padding: 10px 10px; /* Ajustar el espacio interno */
-    margin-left: 0px; /* Espacio entre los botones */
-    background-color: #4CAF50; /* Color de fondo verde */
-    color: white; /* Texto blanco */
-    border: none; /* Sin borde */
-    border-radius: 3px; /* Bordes redondeados */
-    cursor: pointer; /* Cambio de cursor al pasar el ratón */
+    padding: 5px 5px; 
+    margin-left: 10px !important; 
+    margin-right: 10px !important;
+    background-color: #4CAF50;
+    color: black;
+    border: none;
+    border-radius: 10px; 
+    cursor: pointer;
+    font-size: 14px !important; 
 }
 
-/* Estilos para el botón de eliminar */
-.productos .btn-eliminar {
-    background-color: #4CAF50; /* Color de fondo verde */
-    color: white; /* Texto blanco */
-    border: none; /* Sin borde */
-    border-radius: 3px; /* Bordes redondeados */
-    cursor: pointer; /* Cambio de cursor al pasar el ratón */
+.btn-eliminar-dinamico {
+    padding: 5px 10px !important; 
+    margin-top: 10px !important; 
+    margin-left: 20px !important; 
+    background-color: #4CAF50;
+    color: #4CAF50;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px !important; 
+}
+
+
+.producto-en-carrito {
+    list-style: none;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    width: 250%; 
+}
+
+
+.producto-en-carrito img {
+    max-width: 120px;
+    margin-right: 40px;
+}
+
+.precio {
+    margin-right: 20px; 
+}
+
+.cantidad {
+    margin-left: 20px; 
 }
