@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // Obtener la categoría del enlace de filtro
             var category = link.getAttribute('data-category');
 
-            if (category === "Hombre" || category === "Mujer"){
+            if (category === "Hombre" || category === "Mujer" || category === "Unisex"){
                 showProductsByGender(category)
             }else{
                 if(category === "Todos"){
