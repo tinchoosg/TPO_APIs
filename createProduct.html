@@ -6,17 +6,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="apple-touch-icon" href="assets/img/apple-icon.png">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <link rel="apple-touch-icon" href="TPO_APIs/src/assets/img/apple-icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="TPO_APIs/src/assets/img/favicon.ico">
 
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/templatemo.css">
-    <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="stylesheet" href="TPO_APIs/src/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="TPO_APIs/src/assets/css/templatemo.css">
+    <link rel="stylesheet" href="TPO_APIs/src/assets/css/custom.css">
 
     <!-- Load fonts style after rendering the layout styles -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
-    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+    <link rel="stylesheet" href="TPO_APIs/src/assets/css/fontawesome.min.css">
 
 </head>
 
@@ -90,23 +90,11 @@
                         </div>
                     </div>
                     
-                    <a class="nav-icon d-none d-lg-inline" href="#" data-bs-toggle="modal"
-                        data-bs-target="#templatemo_search">
-                        <i class="fa fa-fw fa-search text-dark mr-2"></i>
-                    </a>
-                    <a class="nav-icon position-relative text-decoration-none" href="#">
-                        <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
-                        <span
-                            class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">7</span>
-                    </a>
                     <a class="nav-icon position-relative text-decoration-none" href="#">
                         <i class="fa fa-fw fa-user text-dark mr-3"></i>
                         <span
-                            class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">+99</span>
+                            class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark"></span>
                     </a>
-                    
-                    
-
                 </div>
             </div>
 
@@ -116,51 +104,52 @@
     <!-- Start form-->
     <div class="container p-4">
         <div class="border border-gray-300 p-4">
-            <h1 class="text-2xl font-bold mb-4">Formulario de Carga de Articulos</h1>
-            <form action="/procesar_producto" method="POST" enctype="multipart/form-data">          <!-- POST para procesar el producto.-->
+            <h1 class="text-2xl font-bold mb-4">Carga de Articulos</h1>
+            <form action="/procesar_producto" method="POST" enctype="multipart/form-data">
+                <!-- POST para procesar el producto.-->
                 <div class="mb-3">
                     <label for="titulo" class="form-label">Nombre del Articulo:</label>
                     <input type="text" id="titulo" name="titulo" required class="form-control">
                 </div>
-                
+
                 <div class="mb-3">
                     <label for="descripcion" class="form-label">Descripción:</label>
                     <textarea id="descripcion" name="descripcion" rows="4" required class="form-control"></textarea>
                 </div>
-                
+
                 <div class="mb-3">
                     <label for="precio" class="form-label">Precio:</label>
                     <input type="number" id="precio" name="precio" step="0.01" min="1" required class="form-control">
                 </div>
-                
+
                 <div class="mb-3">
                     <label for="imagenes" class="form-label">Imágenes:</label>
                     <input type="file" id="imagenes" name="imagenes" accept="image/*" multiple class="form-control">
                 </div>
-                
+
                 <div class="mb-3">
                     <label for="categoria" class="form-label">Categoría:</label>
                     <select id="categoria" name="categoria" required class="form-select">
-                        <option value="CPU">CPU</option>
-                        <option value="CPU">GPU</option>
-                        <option value="Gabinete">Gabinete</option>
-                        <option value="Fuentes">Fuentes</option>
-                        <option value="Placa madre">Placa madre</option>
-                        <option value="memoria">Memoria Ram</option>
+                        <option value="Zapatos">Zapatos</option>
+                        <option value="Abrigo">Abrigo</option>
+                        <option value="Remera">Remera</option>
+                        <option value="Accesorios">Accesorio</option>
+                        
                         <!-- Agregar Más categorias para completar-commerce -->
                     </select>
                 </div>
-                
+
                 <div class="mb-3">
                     <label for="disponibilidad" class="form-label">Disponibilidad:</label>
-                    <input type="number" id="disponibilidad" name="disponibilidad" min="0" required class="form-control">
+                    <input type="number" id="disponibilidad" name="disponibilidad" min="0" required
+                        class="form-control">
                 </div>
-                
+
                 <button type="submit" class="btn btn-primary">Cargar Producto</button>
             </form>
         </div>
     </div>
-    
+
     <!-- Close form-->
     <!-- Start Footer -->
     <footer class="bg-dark" id="tempaltemo_footer">
@@ -218,23 +207,28 @@
                 <div class="col-auto me-auto">
                     <ul class="list-inline text-left footer-icons">
                         <li class="list-inline-item border border-light rounded-circle text-center">
-                            <a rel="nofollow" class="text-light text-decoration-none" target="_blank" href="http://fb.com/templatemo"><i class="fab fa-facebook-f fa-lg fa-fw"></i></a>
+                            <a rel="nofollow" class="text-light text-decoration-none" target="_blank"
+                                href="http://fb.com/templatemo"><i class="fab fa-facebook-f fa-lg fa-fw"></i></a>
                         </li>
                         <li class="list-inline-item border border-light rounded-circle text-center">
-                            <a class="text-light text-decoration-none" target="_blank" href="https://www.instagram.com/"><i class="fab fa-instagram fa-lg fa-fw"></i></a>
+                            <a class="text-light text-decoration-none" target="_blank"
+                                href="https://www.instagram.com/"><i class="fab fa-instagram fa-lg fa-fw"></i></a>
                         </li>
                         <li class="list-inline-item border border-light rounded-circle text-center">
-                            <a class="text-light text-decoration-none" target="_blank" href="https://twitter.com/"><i class="fab fa-twitter fa-lg fa-fw"></i></a>
+                            <a class="text-light text-decoration-none" target="_blank" href="https://twitter.com/"><i
+                                    class="fab fa-twitter fa-lg fa-fw"></i></a>
                         </li>
                         <li class="list-inline-item border border-light rounded-circle text-center">
-                            <a class="text-light text-decoration-none" target="_blank" href="https://www.linkedin.com/"><i class="fab fa-linkedin fa-lg fa-fw"></i></a>
+                            <a class="text-light text-decoration-none" target="_blank"
+                                href="https://www.linkedin.com/"><i class="fab fa-linkedin fa-lg fa-fw"></i></a>
                         </li>
                     </ul>
                 </div>
                 <div class="col-auto">
                     <label class="sr-only" for="subscribeEmail">Email address</label>
                     <div class="input-group mb-2">
-                        <input type="text" class="form-control bg-dark border-light" id="subscribeEmail" placeholder="Email address">
+                        <input type="text" class="form-control bg-dark border-light" id="subscribeEmail"
+                            placeholder="Email address">
                         <div class="input-group-text btn-success text-light">Subscribe</div>
                     </div>
                 </div>
@@ -246,8 +240,9 @@
                 <div class="row pt-2">
                     <div class="col-12">
                         <p class="text-left text-light">
-                            Copyright &copy; 2021 Company Name 
-                            | Designed by <a rel="sponsored" href="https://templatemo.com/page/1" target="_blank">TemplateMo</a>
+                            Copyright &copy; 2021 Company Name
+                            | Designed by <a rel="sponsored" href="https://templatemo.com/page/1"
+                                target="_blank">TemplateMo</a>
                         </p>
                     </div>
                 </div>
@@ -257,10 +252,10 @@
     </footer>
     <!-- End Footer -->
     <!-- Start Script -->
-    <script src="assets/js/jquery-1.11.0.min.js"></script>
-    <script src="assets/js/jquery-migrate-1.2.1.min.js"></script>
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/templatemo.js"></script>
-    <script src="assets/js/custom.js"></script>
+    <script src="TPO_APIs/src/assets/js/jquery-1.11.0.min.js"></script>
+    <script src="TPO_APIs/src/assets/js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="TPO_APIs/src/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="TPO_APIs/src/assets/js/templatemo.js"></script>
+    <script src="TPO_APIs/src/assets/js/custom.js"></script>
     <!-- End Script -->
 </body>
