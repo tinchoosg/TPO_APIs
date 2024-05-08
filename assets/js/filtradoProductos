@@ -186,4 +186,31 @@ function getGeneroById(id) {
     }
 };
 
+function getNombreById(id) {
+    const producto = productos.find(function(producto) {
+        return producto.id === id;
+    });
 
+    // Verificar si se encontró el producto con el ID proporcionado
+    if (producto) {
+        return producto.nombre; // Devolver la categoría del producto
+    } else {
+        return null; // Devolver null si no se encuentra ningún producto con el ID proporcionado
+    }
+}
+
+function searchProducts() {
+    var searchText = document.getElementById('searchInput').value.toLowerCase();
+    var products = document.querySelectorAll('.producto');
+    
+    products.forEach(function(product) {
+        var idProducto = product.id;
+        var productName = getNombreById(parseInt(idProducto)).toLocaleLowerCase();;
+        console.log("Si incluye en: " + productName + "el input: " + searchText)
+        if (productName.includes(searchText)) {
+            product.style.display = 'block';
+        } else {
+            product.style.display = 'none';
+        }
+    });
+}

@@ -148,6 +148,8 @@
                         <li><button onclick="showProductsByCategory(data-category)" class="filtro" data-category="Zapatos">Zapatos</a></li>
                     </ul>
                 </li>
+
+
             </ul>
         </div>
 
@@ -169,14 +171,12 @@
                         </li>
                     </ul>
                 </div>
+                
                 <div class="col-md-6 pb-4">
-                    <div class="d-flex">
-                        <select class="form-control">
-                            <option>Featured</option>
-                            <option>A - Z</option>
-                            <option>Item</option>
-                        </select>
-                    </div>
+                    <form onsubmit="searchProducts(); return false;">
+                        <input type="text" id="searchInput" placeholder="Buscar productos...">
+                        <button type="submit">Buscar</button>
+                    </form>
                 </div>
             </div>
 
