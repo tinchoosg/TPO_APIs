@@ -209,6 +209,7 @@ function showExitoCartel() {
     btnCerrar.onclick = function() {
         document.body.removeChild(cartelExito);
         document.body.removeChild(blurryBackground);
+        window.location.href = "index.html";
     };
 
     cartelExito.appendChild(btnCerrar);
