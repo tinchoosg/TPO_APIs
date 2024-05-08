@@ -121,6 +121,7 @@
 <div class="container py-5">
     <div class="row">
         <div class="col-lg-3">
+            
             <h1 class="h2 pb-4">Categorias</h1>
             <ul class="list-unstyled templatemo-accordion">
                 <li class="pb-3">
@@ -129,45 +130,42 @@
                         <i class="fa fa-fw fa-chevron-circle-down mt-1"></i>
                     </a>
                     <ul class="collapse show list-unstyled pl-3">
-                        <li><a class="text-decoration-none" href="#">Hombre</a></li>
-                        <li><a class="text-decoration-none" href="#">Mujer</a></li>
+                        <li><button onclick="showProductsByGender(data-category)" class="filtro" data-category="Hombre">Hombre</button></li>
+                        <li><button onclick="showProductsByGender(data-category)" class="filtro" data-category="Mujer">Mujer</a></li>
+                        <li><button onclick="showProductsByGender(data-category)" class="filtro" data-category="Unisex">Unisex</a></li>
                     </ul>
                 </li>
-                <li class="pb-3">
-                    <a class="collapsed d-flex justify-content-between h3 text-decoration-none" href="#">
-                        Ofertas
-                        <i class="pull-right fa fa-fw fa-chevron-circle-down mt-1"></i>
-                    </a>
-                    <ul id="collapseTwo" class="collapse list-unstyled pl-3">
-                        <li><a class="text-decoration-none" href="#">Deporte</a></li>
-                        <li><a class="text-decoration-none" href="#">Luxury</a></li>
-                    </ul>
-                </li>
+                
                 <li class="pb-3">
                     <a class="collapsed d-flex justify-content-between h3 text-decoration-none" href="#">
                         Producto
                         <i class="pull-right fa fa-fw fa-chevron-circle-down mt-1"></i>
                     </a>
                     <ul id="collapseThree" class="collapse list-unstyled pl-3">
-                        <li><a class="text-decoration-none" href="#">Remeras</a></li>
-                        <li><a class="text-decoration-none" href="#">Buzos</a></li>
-                        <li><a class="text-decoration-none" href="#">Accesorios</a></li>
+                        <li><button onclick="showProductsByCategory(data-category)" class="filtro" data-category="Remera">Remeras</a></li>
+                        <li><button onclick="showProductsByCategory(data-category)" class="filtro" data-category="Abrigo">Abrigos</a></li>
+                        <li><button onclick="showProductsByCategory(data-category)" class="filtro" data-category="Accesorio">Accesorios</a></li>
+                        <li><button onclick="showProductsByCategory(data-category)" class="filtro" data-category="Zapatos">Zapatos</a></li>
                     </ul>
                 </li>
             </ul>
         </div>
+
         <div class="col-lg-9">
             <div class="row">
                 <div class="col-md-6">
                     <ul class="list-inline shop-top-menu pb-3 pt-1">
                         <li class="list-inline-item">
-                            <a class="h3 text-dark text-decoration-none mr-3" href="#">Todo</a>
+                            <button onclick="showProductsByCategory(data-category)" class="filtro" data-category="Todo">Todo</a>
                         </li>
                         <li class="list-inline-item">
-                            <a class="h3 text-dark text-decoration-none mr-3" href="#">Hombre</a>
+                            <button onclick="showProductsByGender(data-category)" class="filtro" data-category="Hombre">Hombre</a>
                         </li>
                         <li class="list-inline-item">
-                            <a class="h3 text-dark text-decoration-none" href="#">Mujer</a>
+                            <button onclick="showProductsByGender(data-category)" class="filtro" data-category="Mujer">Mujer</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <button onclick="showProductsByGender(data-category)" class="filtro" data-category="Unisex">Unisex</a>
                         </li>
                     </ul>
                 </div>
@@ -181,11 +179,12 @@
                     </div>
                 </div>
             </div>
+
             <!-- Listado de productos-->
             <div class="row">
                 
                 <!-- Producto 1 -->
-                <div class="col-md-4">
+                <div class="col-md-4 producto" id="1">
                     
                     <div class="card mb-4 product-wap rounded-0">
                         
@@ -219,7 +218,7 @@
                 <!-- Fin Producto 1 -->
                 
                 <!-- Producto 2 -->
-                <div class="col-md-4">
+                <div class="col-md-4 producto" id="2">
                     <div class="card mb-4 product-wap rounded-0">
                         <div class="card rounded-0">
                             <img class="card-img rounded-0 img-fluid" src="assets/img/Adidas_Originals_Negro.avif">
@@ -233,7 +232,7 @@
                         </div>
                         <div class="card-body">
                             <!-- Modificar el enlace del nombre del producto -->
-                            <a href="shop-single.html#producto2-detalles" class="h3 text-decoration-none">Remera Originals Negro</a>
+                            <a href="shop-single.html#producto2-detalles" class="h3 text-decoration-none">Remera Originals Negra</a>
                             <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
                                 <li></li>
                                 <li class="pt-2">
@@ -259,7 +258,7 @@
                 </div>
                 <!-- Fin Producto 2 -->
                 <!-- Producto 3 -->
-                <div class="col-md-4">
+                <div class="col-md-4 producto" id="3">
                     <div class="card mb-4 product-wap rounded-0">
                         <div class="card rounded-0">
                             <img class="card-img rounded-0 img-fluid" src="assets/img/Levis-Roja.webp">
@@ -298,7 +297,7 @@
                 </div>
                 <!-- Fin Producto 3 -->
                 <!-- Producto 4 -->
-                <div class="col-md-4">
+                <div class="col-md-4 producto" id="4">
                     <div class="card mb-4 product-wap rounded-0">
                         <div class="card rounded-0">
                             <img class="card-img rounded-0 img-fluid" src="assets/img/motomami.webp">
@@ -337,7 +336,7 @@
                 </div>
                 <!-- Fin Producto 4 -->
                 <!-- Producto 5 -->
-                <div class="col-md-4">
+                <div class="col-md-4 producto" id="5">
                     <div class="card mb-4 product-wap rounded-0">
                         <div class="card rounded-0">
                             <img class="card-img rounded-0 img-fluid" src="assets/img/camisahym.avif">
@@ -376,7 +375,7 @@
                 </div>
                 <!-- Fin Producto 5 -->
                 <!-- Producto 6 -->
-                <div class="col-md-4">
+                <div class="col-md-4 producto" id="6">
                     <div class="card mb-4 product-wap rounded-0">
                         <div class="card rounded-0">
                             <img class="card-img rounded-0 img-fluid" src="assets/img/puffernike.jpg">
@@ -415,7 +414,7 @@
                 </div>
                 <!-- Fin Producto 6 -->
                 <!-- Producto 7 -->
-                <div class="col-md-4">
+                <div class="col-md-4 producto" id="7">
                     <div class="card mb-4 product-wap rounded-0">
                         <div class="card rounded-0">
                             <img class="card-img rounded-0 img-fluid" src="assets/img/hoodieadidas.avif">
@@ -454,7 +453,7 @@
                 </div>
                 <!-- Fin Producto 7 -->
                 <!-- Producto 8 -->
-                <div class="col-md-4">
+                <div class="col-md-4 producto" id="8">
                     <div class="card mb-4 product-wap rounded-0">
                         <div class="card rounded-0">
                             <img class="card-img rounded-0 img-fluid" src="assets/img/summer adidas.jpg">
@@ -493,7 +492,7 @@
                 </div>
                 <!-- Fin Producto 8 -->
                 <!-- Producto 9 -->
-                <div class="col-md-4">
+                <div class="col-md-4 producto" id="9">
                     <div class="card mb-4 product-wap rounded-0">
                         <div class="card rounded-0">
                             <img class="card-img rounded-0 img-fluid" src="assets/img/Nike-Dunk-High-Clouds-FD0882-400-Release-Date-4-1068x762.jpg">
@@ -532,7 +531,7 @@
                 </div>
                 <!-- Fin Producto 9 -->                                
                 <!-- Producto 10 -->
-                <div class="col-md-4">
+                <div class="col-md-4 producto" id="10" >
                     <div class="card mb-4 product-wap rounded-0">
                         <div class="card rounded-0">
                             <img class="card-img rounded-0 img-fluid" src="assets/img/JordanfligthMVP85.jpeg">
@@ -786,6 +785,7 @@
     </footer>
     <!-- End Footer -->
 
+    <div id="root"></div>
     <!-- Start Script -->
     <script src="assets/js/jquery-1.11.0.min.js"></script>
     <script src="assets/js/jquery-migrate-1.2.1.min.js"></script>
@@ -795,6 +795,7 @@
     <script src="assets/js/carrito.js"></script>
     <script src="assets/js/shop-single.js"></script>
     <script src="assets/js/shop.js"></script>
+    <script src="assets/js/filtradoProductos"></script>
     <!-- End Script -->
 </body>
 

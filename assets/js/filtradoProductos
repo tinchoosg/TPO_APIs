@@ -1,0 +1,189 @@
+
+const productos = [
+    {
+        id: 1,
+        nombre: "Lentes de sol RayBan",
+        imagen: "assets/img/rayban.webp",
+        precio: 50.00,
+        genero: "Unisex",
+        categoria: "Accesorio"
+    },
+    {
+        id: 2,
+        nombre: "Remera Originals Negra",
+        imagen: "assets/img/Adidas_Originals_Negro.avif",
+        precio: 25.00,
+        genero: "Mujer",
+        categoria: "Remera"
+    },
+    {
+        id: 3,
+        nombre: "Remera Levis Roja",
+        imagen: "assets/img/Levis-Roja.webp",
+        precio: 20.00,
+        genero: "Hombre",
+        categoria: "Remera"
+    },
+    {
+        id: 4,
+        nombre: "Remeron Motomami Tour",
+        imagen: "assets/img/motomami.webp",
+        precio: 15.00,
+        genero: "Mujer",
+        categoria: "Remera"
+    },
+    {
+        id: 5,
+        nombre: "Camisa Lino",
+        imagen: "assets/img/camisahym.avif",
+        precio: 57.00,
+        genero: "Mujer",
+        categoria: "Remera"
+    },
+    {
+        id: 6,
+        nombre: "Nike Life Therma-FIT",
+        imagen: "assets/img/puffernike.jpg",
+        precio: 80.00,
+        genero: "Mujer",
+        categoria: "Abrigo"
+    },
+    {
+        id: 7,
+        nombre: "Adidas select hoodie",
+        imagen: "assets/img/hoodieadidas.avif",
+        precio: 55.00,
+        genero: "Hombre",
+        categoria: "Abrigo"
+    },
+    {
+        id: 8,
+        nombre: "Adidas Forum Bold",
+        imagen: "assets/img/summer adidas.jpg",
+        precio: 230.00,
+        genero: "Unisex",
+        categoria: "Zapatos"
+    },
+    {
+        id: 9,
+        nombre: "Nike Dunk High Clouds",
+        imagen: "assets/img/Nike-Dunk-High-Clouds-FD0882-400-Release-Date-4-1068x762.jpg",
+        precio: 400.00,
+        genero: "Unisex",
+        categoria: "Zapatos"
+    },
+    {
+        id: 10,
+        nombre: "Jordan Flight MVP85",
+        imagen: "assets/img/JordanfligthMVP85.jpeg",
+        precio: 50.00,
+        genero: "Hombre",
+        categoria: "Zapatos"
+    }
+];
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Obtener todos los enlaces de filtro
+    var filterLinks = document.querySelectorAll('.filtro');
+
+    // Iterar sobre cada enlace de filtro
+    filterLinks.forEach(function (link) {
+        // Agregar un evento de clic a cada enlace
+        link.addEventListener('click', function (event) {
+            event.preventDefault(); // Evitar el comportamiento predeterminado del enlace
+
+            // Obtener la categoría del enlace de filtro
+            var category = link.getAttribute('data-category');
+
+            if (category === "Hombre" || category === "Mujer" || category === "Unisex"){
+                showProductsByGender(category)
+            }else{
+                if(category === "Todos"){
+                    showAll();
+                } else{
+                    showProductsByCategory(category);
+                }
+                
+            }
+            // Mostrar u ocultar productos según la categoría seleccionada
+            
+        });
+    });
+
+    function showProductsByCategory(category) {
+        // Obtener todos los productos
+        var products = document.querySelectorAll('.producto');
+
+        // Iterar sobre cada producto
+        products.forEach(function (product) {
+            var idProducto = product.id;
+            var categoriaProducto = getCategoryById(parseInt(idProducto));
+            console.log("categoria" + categoriaProducto);
+            console.log("El id del producto actual es: " + idProducto + "Y la categoria del link es: " + category)
+
+            if (category === 'Todo') {
+                // Muestra el producto
+                product.style.display = 'block';
+            } else{
+            if (categoriaProducto === category) {
+                // Muestra el producto
+                console.log("mostrando producto" + idProducto)
+                product.style.display = 'block';
+            } else {
+                // Oculta el producto
+                product.style.display = 'none';
+            }}
+        });
+    }
+
+    function showProductsByGender(genero) {
+        // Obtener todos los productos
+        var products = document.querySelectorAll('.producto');
+
+        // Iterar sobre cada producto
+        products.forEach(function (product) {
+            var idProducto = product.id;
+            var generoProducto = getGeneroById(parseInt(idProducto));
+            console.log("genero" + generoProducto);
+            console.log("El id del producto actual es: " + idProducto + "Y el genero del link es: " + genero)
+            if (generoProducto === genero) {
+                // Muestra el producto
+                console.log("mostrando producto" + idProducto)
+                product.style.display = 'block';
+            } else {
+                // Oculta el producto
+                product.style.display = 'none';
+            }
+        });
+    }
+
+    
+});
+
+function getCategoryById(id) {
+    const producto = productos.find(function(producto) {
+        return producto.id === id;
+    });
+
+    // Verificar si se encontró el producto con el ID proporcionado
+    if (producto) {
+        return producto.categoria; // Devolver la categoría del producto
+    } else {
+        return null; // Devolver null si no se encuentra ningún producto con el ID proporcionado
+    }
+};
+
+function getGeneroById(id) {
+    const producto = productos.find(function(producto) {
+        return producto.id === id;
+    });
+
+    // Verificar si se encontró el producto con el ID proporcionado
+    if (producto) {
+        return producto.genero; // Devolver la categoría del producto
+    } else {
+        return null; // Devolver null si no se encuentra ningún producto con el ID proporcionado
+    }
+};
+
+

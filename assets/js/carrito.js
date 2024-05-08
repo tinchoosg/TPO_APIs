@@ -1,16 +1,21 @@
 var cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
 
 function addToCartFromCard(productCard) {
+    var productNameElement = productCard.querySelector('.card-body > a.h3.text-decoration-none');
     var productName;
-    var anchorElements = productCard.querySelectorAll('.card-body a');
-
-    anchorElements.forEach(function(a) {
-        if (a.textContent.includes('nombre del producto')) {
-            productName = a.textContent.trim();
+    if (productNameElement) {
+        productName = productNameElement.textContent.trim();
+    } else {
+        productNameElement = productCard.querySelector('.card-body > h1.h2');
+        if (productNameElement) {
+            productName = productNameElement.textContent.trim();
+        } else {
+            productName = 'Nombre del producto no disponible';
         }
-    });
-    var price = parseFloat(productCard.querySelector('.card-body p').textContent.replace('$', '').trim()); 
-    var image = productCard.querySelector('.card-img').src.trim(); 
+    }
+
+    var price = parseFloat(productCard.querySelector('.card-body p').textContent.replace('$', '').trim());
+    var image = productCard.querySelector('.card-img').src.trim();
     addToCart(productName, price, image);
 }
 
@@ -63,21 +68,32 @@ function saveCartItemsToLocalStorage() {
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
 }
 
+
 function showCart() {
     var listaProductos = document.getElementById('lista-productos');
     listaProductos.innerHTML = '';
 
     cartItems.forEach(function(item, index) { 
         var li = document.createElement('li');
+        li.className = 'producto-en-carrito'; 
+
         var img = document.createElement('img');
         img.src = item.image;
+        img.alt = item.name;
         li.appendChild(img);
-        
+
         var productName = document.createElement('span');
+        productName.className = 'nombre'; 
         productName.textContent = item.name;
         li.appendChild(productName);
-        
+
+        var price = document.createElement('span');
+        price.className = 'precio'; 
+        price.textContent = 'Precio: $' + item.price.toFixed(2);
+        li.appendChild(price);
+
         var quantity = document.createElement('span');
+        quantity.className = 'cantidad'; 
         quantity.textContent = 'Cantidad: ';
         var decreaseButton = document.createElement('button');
         decreaseButton.textContent = '-';
@@ -99,6 +115,7 @@ function showCart() {
         });
         quantity.appendChild(increaseButton);
         li.appendChild(quantity);
+
         var removeButton = document.createElement('button');
         removeButton.textContent = 'Eliminar';
         removeButton.addEventListener('click', function() {
@@ -115,9 +132,7 @@ function showCart() {
     document.getElementById('subtotal').textContent = '$' + total.subtotal.toFixed(2);
     document.getElementById('impuestos').textContent = '$' + total.impuestos.toFixed(2);
     document.getElementById('total').textContent = '$' + total.total.toFixed(2);
-
 }
-
 
 
 function calcularTotal() {
@@ -163,7 +178,6 @@ function updateCartCounter() {
     document.getElementById("cart-count").innerText = totalItems;
 }
 
-// Llamar a la función updateCartCounter después de que el DOM se haya cargado completamente en todas las páginas
 document.addEventListener("DOMContentLoaded", function() {
     updateCartCounter();
 });
@@ -174,14 +188,12 @@ document.addEventListener("DOMContentLoaded", function() {
     botonesAgregarAlCarrito.forEach(function(boton) {
         boton.addEventListener("click", function() {
             var productName = boton.dataset.product;
-            //obtener más datos del producto si es necesario
-
             addToCart(productName, /* Otras propiedades del producto */);
         });
     });
 });
 
-// Funciones para finalizar compra
+
 document.addEventListener("DOMContentLoaded", function() {
     var btnFinalizarCompra = document.querySelector(".btn-finalizar");
     btnFinalizarCompra.addEventListener("click", finalizarCompra);
